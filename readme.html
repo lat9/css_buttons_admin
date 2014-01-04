@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Admin CSS3 Buttons for Zen-Cart v1.5.0, v1.5.1 and v1.5.2</title>
+
+<style type="text/css">
+<!--
+a, a:active, a:visited {
+  color: #006666;
+  text-decoration: none
+}
+a:hover {
+    color:#00CC99;
+    text-decoration: underline;
+}
+BODY, P, H1, H2, H3, H4, H5, H6, LI, TD, DD, DT, pre, code {
+  font-family: Verdana, AvantGarde, Tahoma, Arial, sans-serif;
+  font-size: 10pt;
+  color: black;
+  padding: 0px;
+  margin: 20px;
+}
+H1, H2, H3, H4 {
+  font-weight: bold
+}
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 16px;
+}
+pre, code {
+  padding-left: 25px;
+  font-family: Courier;
+}
+code { padding: 0; margin: 0; }
+ol li, ul li, ul li ul li {
+  margin-left: 0;
+}
+.corefile { color: red; }
+.forward { float: right; }
+.back { float: back; }
+#image_without { float: left; margin-right: 20px; }
+#image_with { float: right; margin-left; 20px; }
+-->
+</style>
+</head>
+
+<body>
+<h1>Admin CSS3 Buttons for Zen-Cart v1.5.0, v1.5.1 and v1.5.2</h1>
+<h3>Version 1.0.0 by lat9 (vinosdefrutastropicales.com)</h3>
+<p>Current Support Thread at Zen Cart Forums: <a href="http://www.zen-cart.com/showthread.php?211505-CSS-Buttons-for-Admin-Support-Thread">http://www.zen-cart.com/showthread.php?211505-CSS-Buttons-for-Admin-Support-Thread</a></p>
+<h2>Version History:</h2>
+<ul>
+  <li>v1.0.0, 2013-12-28, Initial release.</li>
+</ul>
+
+<h2>What it does</h2>
+<p>This plugin replaces Zen-Cart admin's button functionality with some CSS3 styling. The buttons produced have rounded corners in the more recent browsers and &quot;fall back&quot; to squared corners on non-CSS3 aware browsers.</p>
+<p>Once you have installed the SQL patch provided by the plugin, there is an additional configuration item in your admin's <em>Configuration-&gt;Layout Settings</em>: <b>Use CSS Buttons (Admin)?</b>.  Set the value to <b>false</b> (the default) to disable the CSS-button functionality; set the value to <b>true</b> to enable the functionality.</p>
+<img src="currencies_without_css.jpg" alt="Currencies Display Without CSS" id="image_without" />
+<img src="currencies_with_css.jpg" alt="Currencies Display With CSS" id="image_with" />
+<p>The image to the left shows the default look of your admin's <em>Localization-&gt;Currencies</em>; the image to the right shows the same page using the default CSS styling (controlled by /YOUR_ADMIN/includes/stylesheet_css_buttons_admin.css).</p>
+<br style="clear: both; " />
+
+<h2>Installation</h2>
+<p>There are <span class="corefile">core-file overwrites</span> in this plugin; you should <strong>always</strong> backup your cart's database and files prior to making any changes.</p>
+<ol>
+  <li>Unzip the plugin's package file and rename the YOUR_ADMIN folder to match your custom admin folder's name.</li>
+  <li>Log into your Zen Cart admin, open the plugin's file <code>/css_buttons_admin_install.sql</code>, copy and paste the contents of that file into your admin's <em>Tools-&gt;Install SQL Patches</em> and press the Send button.</li>
+  <li>Copy the files provided by the plugin to your Zen Cart:<ol>
+    <li><span class="corefile">/YOUR_ADMIN/includes/stylesheet.css</span></li>
+    <li>/YOUR_ADMIN/includes/stylesheet_admin_css_buttons.css</span></li>
+    <li><span class="corefile">/YOUR_ADMIN/includes/functions/html_output.php</span></li>
+  </ol></li>
+</ol>
+
+<h2>Uninstall</h2>
+<p>Replace the backup copies of the files you copied during the installation, delete the new files and run the plugin's file <code>/css_buttons_admin_uninstall.sql</code>.</p>
+
+</body>
+</html>

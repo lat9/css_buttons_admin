@@ -1,0 +1,2 @@
+INSERT INTO configuration ( configuration_title, configuration_key, configuration_value, configuration_description, configuration_group_id, sort_order, date_added, use_function, set_function)
+VALUES ( "Use CSS Buttons (Admin)?", "ADMIN_USE_CSS_BUTTONS", "false", "Use CSS buttons instead of GIF images in admin?", 19, 147, NOW(), NULL, "zen_cfg_select_option(array('true', 'false'),");
