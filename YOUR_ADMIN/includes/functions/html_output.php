@@ -190,7 +190,7 @@
 ////
 // javascript to dynamically update the states/provinces list when the country is changed
 // TABLES: zones
-  function zen_js_zone_list($country, $form, $field) {
+  function zen_js_zone_list($country, $form, $field, $showTextField = true) {
     global $db;
     $countries = $db->Execute("select distinct zone_country_id
                                from " . TABLE_ZONES . "
@@ -221,10 +221,12 @@
       $num_country++;
       $countries->MoveNext();
     }
-    $output_string .= '  } else {' . "\n" .
+      $output_string .= '  }';
+      if ($showTextField) {
+          $output_string .= ' else {' . "\n" .
                       '    ' . $form . '.' . $field . '.options[0] = new Option("' . TYPE_BELOW . '", "");' . "\n" .
                       '  }' . "\n";
-
+      }
     return $output_string;
   }
 
@@ -342,10 +344,10 @@
 
 ////
 // Output a form hidden field
-  function zen_draw_hidden_field($name, $value = '', $parameters = '') {
+  function zen_draw_hidden_field($name, $value = '~*~*#', $parameters = '') {
     $field = '<input type="hidden" name="' . zen_output_string($name) . '"';
 
-    if (zen_not_null($value)) {
+    if (zen_not_null($value) && $value != '~*~*#') {
       $field .= ' value="' . zen_output_string($value) . '"';
     } elseif (isset($GLOBALS[$name]) && is_string($GLOBALS[$name])) {
       $field .= ' value="' . zen_output_string(stripslashes($GLOBALS[$name])) . '"';
